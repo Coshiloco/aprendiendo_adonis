@@ -4,7 +4,7 @@ export default class Projects extends BaseSchema {
   protected tableName = 'projects'
 
   public async up () {
-    this.schema.table(this.tableName, (table) => {
+    this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
       table.string('name').notNullable()
       table.text('description').nullable()
@@ -14,6 +14,6 @@ export default class Projects extends BaseSchema {
   }
 
   public async down () {
-    this.schema.dropTable(this.tableName)
+    this.schema.dropTable(this.tableName);
   }
 }
