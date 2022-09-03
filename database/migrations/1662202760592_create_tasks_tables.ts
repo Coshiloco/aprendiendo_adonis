@@ -9,7 +9,9 @@ export default class Tasks extends BaseSchema {
       table.string('name').notNullable()
       table.text('description').nullable()
       table.timestamp('due_at').nullable()
-      table.integer('status_id').notNullable().defaultTo(1)
+      table.integer('status_id').unsigned().notNullable().defaultTo(1)
+      table.integer('created_by').unsigned().references('id').inTable('users')
+      table.integer('assigned_to').unsigned().references('id').inTable('users')
       table.timestamps(true, true)
     })
   }
