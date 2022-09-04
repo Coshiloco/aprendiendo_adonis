@@ -3,7 +3,7 @@ import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 export default class ProjectUsers extends BaseSchema {
   protected tableName = 'project_users'
 
-  public async up () {
+  public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
       table.integer('project_id').unsigned().references('id').inTable('projects')
@@ -13,7 +13,7 @@ export default class ProjectUsers extends BaseSchema {
     })
   }
 
-  public async down () {
+  public async down() {
     this.schema.dropTable(this.tableName)
   }
 }
