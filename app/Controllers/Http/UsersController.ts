@@ -1,8 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import UsersService from '../../../../services/UsersService'
+import UsersService from '../../../services/UsersService'
 
 export default class UsersController {
-
   public async index({ response }: HttpContextContract) {
     return response.json({ userNamespace: true })
   }
@@ -12,23 +11,13 @@ export default class UsersController {
     return response.json({ userId: test })
   }
 
-  public async create(ctx: HttpContextContract) {
-  
-  }
+  public async create(ctx: HttpContextContract) {}
 
-  public async store(ctx: HttpContextContract) {
-  
-  }
+  public async store(ctx: HttpContextContract) {}
 
-  public async edit(ctx: HttpContextContract) {
-  
-  }
+  public async edit(ctx: HttpContextContract) {}
 
-  public async update(ctx: HttpContextContract) {
-  
-  }
+  public async update(ctx: HttpContextContract) {}
 
-  public async destroy(ctx: HttpContextContract) {
-  
-  }
+  public async destroy(ctx: HttpContextContract) {}
 }
